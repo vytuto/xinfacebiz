@@ -47,7 +47,7 @@ class HelloWorldControllerTest {
     @Test
     @DisplayName("Basic test for GET request")
     void testGetRequest() {
-        ResponseEntity responseEntity = controller.helloWorldGet(INPUT_NAME);
+        ResponseEntity responseEntity = controller.helloWorldGet();
 
         // Verify the response obtained matches the values we expect.
         JSONObject jsonObjectFromResponse = new JSONObject(responseEntity.getBody().toString());
