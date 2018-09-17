@@ -36,7 +36,7 @@ public class HelloWorldController {
     	    ObjectListing object_listing = s3.listObjects(BUCKET_NAME);
     	    object_listing.getObjectSummaries().stream().forEach(o->{
 	            S3ObjectSummary summary = (S3ObjectSummary)o;
-    	    	result.append(summary.getETag());
+    	    	result.append(summary.getKey() + " ");
     	    });
 //    	    while (true) {
 //    	        for (Iterator<?> iterator =
