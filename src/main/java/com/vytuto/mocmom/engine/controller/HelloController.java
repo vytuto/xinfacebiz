@@ -1,15 +1,15 @@
-package com.aws.codestar.projecttemplates.controller;
+package com.vytuto.mocmom.engine.controller;
 
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.PagedList;
 import org.springframework.social.facebook.api.User;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/")
 public class HelloController {
 
@@ -28,7 +28,7 @@ public class HelloController {
 		}
 		String[] fields = { "id", "email", "first_name", "last_name" };
 		User userProfile = facebook.fetchObject("me", User.class, fields);
-		System.out.println( userProfile.getId());
+		System.out.println(userProfile.getId());
 //        facebook.friendOperations().getFr
 		model.addAttribute("facebookProfile", userProfile);
 //        PagedList<Post> feed = facebook.feedOperations().getFeed();
